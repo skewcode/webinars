@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Details</title>
+</head>
+
+<body bgcolor="cyan">
+  <!--Include Partial-->
+  <%-include menu.ejs%>
+
+    <p>
+      Name: <%=rp.name%><br>
+      Location: <%=rp.location%><br> 
+      Website: <%=qs.web%><br> 
+      Profession: <%=qs.profession%><br>
+      <br>
+    </p>
+
+
+    <span>Skills:</span>
+    <ul>
+      <% skills.forEach(function(data){%>
+        <li>
+          <%=data%>
+        </li>
+        <%});%>
+    </ul>
+</body>
+
+</html>
