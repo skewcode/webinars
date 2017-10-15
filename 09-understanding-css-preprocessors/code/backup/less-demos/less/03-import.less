@@ -1,0 +1,19 @@
+// .css and .less files can be imported (while importing .less files, the extension is optional
+@import 'external/reset.less';
+
+@primary-color: red;
+
+.intro {
+    h1 {
+        color: @primary-color;
+    }
+
+    a {
+        text-decoration: underline @primary-color;
+
+        &:hover {
+            text-decoration: none;
+            color: @primary-color;
+        }
+    }
+}

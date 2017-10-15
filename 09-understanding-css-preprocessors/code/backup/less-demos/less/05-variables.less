@@ -1,0 +1,37 @@
+@import 'includes/vars';
+
+body {
+    font-family: @primary-font-stack;
+}
+
+.intro {
+    h1 {
+        padding: @padding-lg 0;
+        font-size: @font-size-base + 12px;
+        color: @primary-color;
+    }
+
+    h2 {
+        padding: @padding-lg 0;
+        font-size: @font-size-base + 7px;
+        color: @primary-color;
+    }
+
+    p {
+        padding: @padding-base 0;
+    }
+
+    a {
+        text-decoration: underline @primary-color;
+
+        &:hover {
+            text-decoration: none;
+            color: @primary-color;
+        }
+    }
+}
+
+p.highlight {
+    border: @primary-border;
+    box-shadow: @primary-box-shadow;
+}

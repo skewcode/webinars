@@ -1,0 +1,21 @@
+.row {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.col-1 {
+  float: left;
+  width: 100%; }
+
+.col-2 {
+  float: left;
+  width: 50%; }
+
+.col-3 {
+  float: left;
+  width: 33.33333%; }
+
+.col-4 {
+  float: left;
+  width: 25%; }

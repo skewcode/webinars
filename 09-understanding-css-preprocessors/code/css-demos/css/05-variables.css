@@ -1,0 +1,35 @@
+@import 'includes/vars';
+
+body {
+    font-family: Garamond, Times, serif;
+}
+
+.intro h1 {
+    padding: 18px 0;
+    font-size: 28px;
+    color: red;
+}
+
+.intro h2 {
+    padding: 18px 0;
+    font-size: 23px;
+    color: red;
+}
+
+.intro p {
+    padding: 12px 0;
+}
+
+.intro a {
+    text-decoration: underline red;
+}
+
+.intro a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+p.highlight {
+    border: 1px solid #cc0000;
+    box-shadow: 0 0 10px 5px #ffcccc;
+}

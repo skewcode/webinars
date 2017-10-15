@@ -1,0 +1,19 @@
+// .css and .scss files can be imported (while importing .scss files, the extension is optional
+@import 'external/reset';
+
+$primary-color: red;
+
+.intro {
+    h1 {
+        color: $primary-color;
+    }
+
+    a {
+        text-decoration: underline $primary-color;
+
+        &:hover {
+            text-decoration: none;
+            color: $primary-color;
+        }
+    }
+}

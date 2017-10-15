@@ -1,0 +1,15 @@
+/* this comment will appear in the output */
+.intro {
+    h1 { // .intro h1 (less tyle comment - silent comment)
+        color: red;
+    }
+
+    a { // .intro a
+        text-decoration: underline red;
+
+        &:hover { // .intro a:hover
+            text-decoration: none;
+            color: red;
+        }
+    }
+}

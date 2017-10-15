@@ -1,0 +1,16 @@
+$grid-width: 100%;
+
+.row {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+@for $col from 1 through 4 {
+    .col-#{$col} {
+        float: left;
+        width: $grid-width / $col;
+
+    }
+}

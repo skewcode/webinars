@@ -1,0 +1,46 @@
+/*
+    Some color functions are 
+    - lighten(), darken()
+    - saturate(), desaturate()
+    - fadein(), fadeout(), fade()
+    - spin(), mix()
+    - hue(), saturation(), lightness(), alpha()
+*/
+/*
+    Some math functions are
+    - round()
+    - ceil()
+    - floor()
+*/
+body {
+  font-family: Garamond, Times, serif;
+}
+p.highlight {
+  padding: 12px;
+  border: 1px solid #cc0000;
+  box-shadow: 0 0 10px 5px #ffcccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.row {
+  overflow: auto;
+}
+.row .col-4 {
+  float: left;
+  box-sizing: border-box;
+  width: 32%;
+  padding: 12px;
+  border: 1px solid #cc0000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 2%;
+}
+.row .col-4:last-child {
+  margin-right: 0;
+}

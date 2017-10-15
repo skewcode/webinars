@@ -1,0 +1,5 @@
+body {
+  background-image: url('http://localhost:8080/less-demos/after/images/bob-minion.jpg');
+  background-repeat: no-repeat;
+  background-size: 400px;
+}

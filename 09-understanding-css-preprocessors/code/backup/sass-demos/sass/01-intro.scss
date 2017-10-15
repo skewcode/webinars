@@ -1,0 +1,12 @@
+/*
+    Styles for 01-intro.html (A CSS style comment)
+*/
+$primary-color: blue; // the primary theme color (a Sass style comment)
+
+h1 {
+    color: $primary-color;
+}
+
+a {
+    text-decoration: underline $primary-color;
+}

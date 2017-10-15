@@ -1,0 +1,4 @@
+- Portfolio page
+- Theme colors, background-colors, font-families, font-sizes etc. using variables
+- Calculations showing shades of theme colors, gradations in font sizes etc.
+- Autoprefix border-radius, transform etc. using a mixin

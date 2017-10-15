@@ -1,0 +1,17 @@
+@import 'external/reset';
+@import 'includes/colors';
+
+.intro {
+    h1 {
+        color: @primary-color;
+    }
+
+    a {
+        text-decoration: underline @primary-color;
+
+        &:hover {
+            text-decoration: none;
+            color: @primary-color;
+        }
+    }
+}

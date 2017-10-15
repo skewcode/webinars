@@ -1,0 +1,12 @@
+{
+  "name": "css-preprocessors",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass sass-demos/sass -o sass-demos/build/css",
+    "watch-sass": "nodemon --watch sass-demos/sass -e scss -x \"npm run build-sass\""
+  },
+  "author": "",
+  "license": "ISC"
+}

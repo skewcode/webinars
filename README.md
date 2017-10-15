@@ -2,6 +2,8 @@
 Source code, slides and other materials from webinars conducted by SkewCode.
 
 ___
+* Understanding CSS Preprocessors ([video](https://youtu.be/6tEpTia1jWc) | [code](./09-understanding-css-preprocessors/code) | This webinar did not have slides)
+  * _Webinar #8, by Prashanth Puranik on Oct 15, 2017_
 * Introduction to Node.js ([video](https://youtu.be/Sb3tpuaR634) | [code](./08-introduction-to-nodejs/code) | [slides](./08-introduction-to-nodejs/slides))
   * _Webinar #8, by Sreekanth M.E. on Oct 11, 2017_
 * Angular 4: Component Interaction, Services, View Encapsulation ([video](https://youtu.be/WJSrk1D2NKg))

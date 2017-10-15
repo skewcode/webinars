@@ -1,0 +1,31 @@
+@import 'includes/vars';
+@import 'includes/mixins';
+
+body {
+    font-family: @primary-font-stack;
+}
+
+p.highlight {
+    padding: @padding-base;
+    border: @primary-border;
+    box-shadow: @primary-box-shadow;
+    .border-radius( @primary-border-radius );
+}
+
+.row {
+    overflow: auto;
+
+    .col-4 {
+        float: left;
+        box-sizing: border-box;
+        width: 32%;
+        padding: @padding-base;
+        border: @primary-border;
+        .border-radius; // default value will be applied for border-radius
+        margin-right: 2%;
+    
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

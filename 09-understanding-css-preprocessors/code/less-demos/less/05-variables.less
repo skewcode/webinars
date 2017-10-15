@@ -1,0 +1,37 @@
+@import 'includes/vars';
+
+body {
+    font-family: Garamond, Times, serif;
+}
+
+.intro {
+    h1 {
+        padding: @padding-lg 0;
+        font-size: @font-size-base + 12;
+        color: @primary-color;
+    }
+
+    h2 {
+        padding: @padding-lg 0;
+        font-size: @font-size-base + 7;
+        color: @primary-color;
+    }
+
+    p {
+        padding: @padding-base 0;
+    }
+
+    a {
+        text-decoration: underline @primary-color;
+        
+        &:hover {
+            text-decoration: none;
+            color: @primary-color;
+        }
+    }
+}
+
+p.highlight {
+    border: 1px solid @primary-color * 0.8;
+    box-shadow: 0 0 10px 5px lighten(@primary-color, 35%);
+}

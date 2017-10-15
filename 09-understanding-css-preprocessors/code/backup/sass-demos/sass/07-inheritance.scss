@@ -1,0 +1,24 @@
+@import 'includes/vars';
+@import 'includes/mixins';
+
+.message {
+    border: 1px solid #ccc;
+    @include border-radius(4px);
+    padding: 10px;
+    color: #333;
+}
+  
+.message-success {
+    @extend .message;
+    border-color: $color-success;
+}
+  
+.message-error {
+    @extend .message;
+    border-color: $color-error;
+}
+  
+.message-warning {
+    @extend .message;
+    border-color: $color-warning;
+}

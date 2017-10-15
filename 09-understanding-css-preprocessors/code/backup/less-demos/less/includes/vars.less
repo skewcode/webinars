@@ -1,0 +1,29 @@
+@primary-color: red;
+
+@primary-font-stack: Garamond, Times, serif;
+
+@font-size-base: 16px;
+
+@padding-base: 12px;
+@padding-lg: @padding-base + 6px;
+@padding-sm: @padding-base - 4px;
+
+@primary-border: 1px solid @primary-color * 0.8; // the red, green, blue color components get multiplied by this factor
+@primary-box-shadow: 0 0 10px 5px lighten(@primary-color, 40%); // color functions can also be used
+@primary-border-radius: 4px;
+
+/*
+    Some color functions are 
+    - lighten(), darken()
+    - saturate(), desaturate()
+    - fadein(), fadeout(), fade()
+    - spin(), mix()
+    - hue(), saturation(), lightness(), alpha()
+*/
+
+/*
+    Some math functions are
+    - round()
+    - ceil()
+    - floor()
+*/
