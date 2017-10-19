@@ -1,5 +1,5 @@
 # Webinars
-Source code, slides and other materials from webinars conducted by SkewCode.
+Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
 * Understanding CSS Preprocessors 
