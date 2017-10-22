@@ -3,7 +3,7 @@ Source code, slides and other materials from webinars conducted by [SkewCode](ht
 
 ___
 * Introduction to Git and Github
-  * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar did not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/slides)_
+  * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar did not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/cheatsheet)_
   * _webinar #10, by [Mithun Shanbhag](https://www.linkedin.com/in/mithunshanbhag/) on Oct 22, 2017_
 * Understanding CSS Preprocessors 
   * _[video](https://youtu.be/6tEpTia1jWc) | [code](./09-understanding-css-preprocessors/code) | This webinar did not have slides_
