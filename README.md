@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by SkewCode.
 
 ___
+* Introduction to Git and Github
+  * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar did not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/slides)_
+  * _webinar #10, by [Mithun Shanbhag](https://www.linkedin.com/in/mithunshanbhag/) on Oct 22, 2017_
 * Understanding CSS Preprocessors 
   * _[video](https://youtu.be/6tEpTia1jWc) | [code](./09-understanding-css-preprocessors/code) | This webinar did not have slides_
   * _webinar #9, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Oct 15, 2017_
