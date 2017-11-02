@@ -35,4 +35,4 @@ ___
 
 ___
 Notes:
-  * For a few of our earliest webinars, we're missing links to slide-decks and code-samples. We apologize for the inconvenience. 
+  * For a few of our earliest webinars, we're missing links to the slide-decks and code-samples. We apologize for the inconvenience. 
