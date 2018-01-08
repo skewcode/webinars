@@ -3,10 +3,10 @@ Source code, slides and other materials from webinars conducted by [SkewCode](ht
 
 ___
 * Advanced JavaScript / ES6 Features - Part 2 
-  * _[video](https://youtu.be/78plH8hSKKo) | [code](./12-advanced-js-part2/code) | This webinar did not have slides_
+  * _[video](https://youtu.be/78plH8hSKKo) | [code](./12-advanced-js-part2/code) | [slides](./12-advanced-js-part2/slides)_
   * _webinar #12, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 20, 2018_
 * Advanced JavaScript / ES6 Features - Part 1 
-  * _[video](https://youtu.be/7-ACE9Y_GSs) | [code](./11-advanced-js-part1/code) | This webinar did not have slides_
+  * _[video](https://youtu.be/7-ACE9Y_GSs) | [code](./11-advanced-js-part1/code) | [slides](./11-advanced-js-part1/slides)_
   * _webinar #11, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 13, 2018_
 * Introduction to Git and Github
   * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar did not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/cheatsheet)_
