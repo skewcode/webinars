@@ -2,17 +2,14 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
-* Advanced JavaScript / ES6 Features - Part 2 
-  * _[video](https://youtu.be/78plH8hSKKo) | [code](./12-advanced-js-part2/code) | [slides](./12-advanced-js-part2/slides)_
-  * _webinar #12, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 20, 2018_
 * Advanced JavaScript / ES6 Features - Part 1 
-  * _[video](https://youtu.be/7-ACE9Y_GSs) | [code](./11-advanced-js-part1/code) | [slides](./11-advanced-js-part1/slides)_
+  * _[video](https://youtu.be/7-ACE9Y_GSs) | [code](./11-advanced-js-part1/code) | This webinar does not have slides_
   * _webinar #11, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 13, 2018_
 * Introduction to Git and Github
-  * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar did not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/cheatsheet)_
+  * _[video](https://youtu.be/rsWsKJSGMAE) | This webinar does not have code samples | [slides](./10-introduction-to-git-and-github/slides) | [cheatsheet](./10-introduction-to-git-and-github/cheatsheet)_
   * _webinar #10, by [Mithun Shanbhag](https://www.linkedin.com/in/mithunshanbhag/) on Oct 22, 2017_
 * Understanding CSS Preprocessors 
-  * _[video](https://youtu.be/6tEpTia1jWc) | [code](./09-understanding-css-preprocessors/code) | This webinar did not have slides_
+  * _[video](https://youtu.be/6tEpTia1jWc) | [code](./09-understanding-css-preprocessors/code) | This webinar does not have slides_
   * _webinar #9, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Oct 15, 2017_
 * Introduction to Node.js 
   * _[video](https://youtu.be/Sb3tpuaR634) | [code](./08-introduction-to-nodejs/code) | [slides](./08-introduction-to-nodejs/slides)_
