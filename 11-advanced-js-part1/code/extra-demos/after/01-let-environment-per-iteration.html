@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            h3 { margin: 0; }
+            ul { display: inline-block; margin-bottom: 60px; }
+            li { cursor: pointer; }
+            li:hover { color: crimson; }
+        </style>
+    </head>
+    <body>
+        <h3>Attempt 1: onclick handler set directly</h3>
+        <ul id="list-1"></ul>
+
+        <h3>Attempt 2: Closure (i.e environment) created per iteration and onclick handler set</h3>
+        <ul id="list-2"></ul>
+
+        <h3>Attempt 3: Closure (i.e environment) created per iteration by using let keyword when declaring i</h3>
+        <ul id="list-3"></ul>
+        
+        <script>
+            /**
+             * let creates an environment per iteration
+             * (let in for loops)
+             */
+            
+            /* We want to display the index of the item (1/2/3/4/5) when a list item is clicked */
+            window.onload = function() {
+                var list1 = document.getElementById('list-1');
+                var list2 = document.getElementById('list-2');
+                var list3 = document.getElementById('list-3');
+
+                // Attempt 1: There is only a single variable i, and it gets updated to value 6 when the script runs, and handlers are set, and click event occurs.
+                for( var i = 1; i <= 5; i++ ) {
+                    var li = document.createElement( 'li' );
+                    li.innerHTML = 'Item ' + i;
+
+                    list1.appendChild( li );
+
+                    // The right hand side is an function expression and is evaluated each time the loop runs - thus the five functions are different
+                    li.onclick = function() {
+                        alert( i ); // However, all 5 functions access the same variable i
+                    };
+                }
+
+                // Attempt 2: We create a closure (by calling a function that returns a function), i.e. an environment per iteration - the closure contains a variable i (passed as argument) that is created per iteration.
+                for( var i = 1; i <= 5; i++ ) {
+                    var li = document.createElement( 'li' );
+                    li.innerHTML = 'Item ' + i;
+
+                    list2.appendChild( li );
+
+                    // Due to the closure (enclosing function), the variable i is differnt for each iteration
+                    li.onclick = (function( i ) {
+                        return function() {
+                            alert( i ); // Now, all 5 functions access different variables (all named i)
+                        };
+                    }( i ));
+                }
+
+                // Attempt 3: Since let creates an environment per iteration, i.e. a new closure for every iteration, when we declare the variable i using let, the below logic simply works!
+                for( let i = 1; i <= 5; i++ ) {
+                    let li = document.createElement( 'li' );
+                    li.innerHTML = 'Item ' + i;
+                    
+                    list3.appendChild( li );
+
+                    li.onclick = function() {
+                        alert( i );
+                    };
+                }
+            };
+        </script>
+    </body>
+</html>
