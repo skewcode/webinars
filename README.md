@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
+* Angular Modules 
+  * _[video](https://youtu.be/sDC3QwuwQH0) | [code](./12-angular-modules/code) | [slides](./12-angular-modules/slides)_
+  * _webinar #12, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Jan 20, 2018_
 * Advanced JavaScript / ES6 Features - Part 1 
   * _[video](https://youtu.be/7-ACE9Y_GSs) | [code](./11-advanced-js-part1/code) | This webinar does not have slides_
   * _webinar #11, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 13, 2018_

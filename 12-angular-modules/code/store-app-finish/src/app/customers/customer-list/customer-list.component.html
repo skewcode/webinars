@@ -1,0 +1,9 @@
+<p>
+  <button class="btn btn-success" (click)="onAdd()">Add</button>
+</p>
+<div class="list-group">
+  <a [routerLink]="['/customers', customer.id]" class="list-group-item" *ngFor="let customer of customers">
+    {{ customer.name }}
+  </a>
+</div>
+<app-alert type="info" message="Click 'Add' button to add a new customer. Select a customer to view detail."></app-alert>

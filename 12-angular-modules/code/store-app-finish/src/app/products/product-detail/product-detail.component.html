@@ -1,0 +1,18 @@
+<h4>Product Details</h4>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ product.name }}</h3>
+  </div>
+  <div class="panel-body">
+    <p>{{ product.description }}</p>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Available: {{ product.isAvailable ? 'Yes' : 'No' }}</li>
+    <li class="list-group-item">Price: {{ product.price }}</li>
+  </ul>
+</div>
+<p>
+  <button class="btn btn-primary" (click)="onEdit()">Edit</button>
+  <button class="btn btn-primary" (click)="onDelete()">Delete</button>
+</p>
+

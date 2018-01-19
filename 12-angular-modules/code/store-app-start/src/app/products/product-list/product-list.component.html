@@ -1,0 +1,9 @@
+<p>
+  <button class="btn btn-primary" (click)="onAdd()">Add</button>
+</p>
+<div class="list-group">
+  <a [routerLink]="['/products', product.id]" class="list-group-item" *ngFor="let product of products">
+    {{ product.name }}
+  </a>
+</div>
+<app-alert type="info" message="Click 'Add' button to add a new product. Select a product to view detail."></app-alert>

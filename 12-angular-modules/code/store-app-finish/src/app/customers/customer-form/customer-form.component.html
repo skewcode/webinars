@@ -1,0 +1,27 @@
+<h4>Customer Form</h4>
+<div class="well well-lg">
+  <form>
+    <div class="form-group">
+      <label for="customerName">Name</label>
+      <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="customer.name">
+    </div>
+    <div class="form-group">
+      <label for="customerPhone">Phone</label>
+      <input type="text" class="form-control" id="customerPhone" name="customerPhone" [(ngModel)]="customer.phone">
+    </div>
+    <div class="form-group">
+      <label for="customerEmail">Email</label>
+      <input type="text" class="form-control" id="customerEmail" name="customerEmail" [(ngModel)]="customer.email">
+    </div>
+    <div class="form-group">
+      <label for="customerCity">City</label>
+      <input type="text" class="form-control" id="customerCity" name="customerCity" [(ngModel)]="customer.city">
+    </div>
+    <button type="button" name="save" class="btn btn-success" (click)="onSave()">
+      Save
+    </button>
+  </form>
+</div>
+<div class="alert alert-success" *ngIf="showMessage">
+  Customer saved successfully!
+</div>

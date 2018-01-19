@@ -1,0 +1,15 @@
+<h4>Customer Details</h4>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ customer.name }}</h3>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Phone: {{ customer.phone }}</li>
+    <li class="list-group-item">Email: {{ customer.email }}</li>
+    <li class="list-group-item">City: {{ customer.city }}</li>
+  </ul>
+</div>
+<p>
+  <button class="btn btn-success" (click)="onEdit()">Edit</button>
+  <button class="btn btn-success" (click)="onDelete()">Delete</button>
+</p>
