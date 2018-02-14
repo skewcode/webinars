@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
+* Understanding Redux (state management for ReactJS apps) 
+  * _[video](https://youtu.be/NheixtwQ4vE) | [code](./15-understanding-redux/code) | [slides](./15-understanding-redux/slides)_
+  * _webinar #15, by [Sreekanth M.E.](https://www.linkedin.com/in/bangalorecorporatetrainer/) on Feb 10, 2018_
 * Introduction to ReactJS 
   * _[video](https://youtu.be/NheixtwQ4vE) | [code](./14-introduction-to-reactjs/code) | [slides](./14-introduction-to-reactjs/slides)_
   * _webinar #14, by [Sreekanth M.E.](https://www.linkedin.com/in/bangalorecorporatetrainer/) on Feb 3, 2018_
