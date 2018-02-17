@@ -1,0 +1,40 @@
+<h3>Product Form</h3>
+<hr>
+<div class="well well-lg">
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="productName">Name</label>
+      <input type="text" class="form-control" id="productName" name="name" [ngModel]="product.name" required #name="ngModel">
+      <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="productDescription">Description</label>
+      <textarea class="form-control" id="productDescription" cols="30" rows="4" name="description" [ngModel]="product.description"
+        required #description="ngModel">
+      </textarea>
+      <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+        Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Price</label>
+      <input type="text" class="form-control" id="productPrice" name="price" [ngModel]="product.price" required #price="ngModel">
+      <div class="alert alert-danger" *ngIf="price.invalid && price.touched">
+        Price is required.
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="productIsAvailable" value="true" name="isAvailable" [ngModel]="product.isAvailable"> Available
+      </label>
+    </div>
+    <button id="save" name="save" type="submit" [disabled]="f.invalid" class="btn btn-primary">
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
+    <a class="btn btn-warning" routerLink="/products">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  </form>
+</div>

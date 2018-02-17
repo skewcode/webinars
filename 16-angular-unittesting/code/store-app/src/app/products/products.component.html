@@ -1,0 +1,37 @@
+<h3>Products</h3>
+<div>
+</div>
+<hr>
+<a routerLink="/products/new" class="btn btn-primary">
+  <span class="glyphicon glyphicon-plus"></span>
+</a>
+<br>
+<br>
+<div>
+  <table class="table table-bordered">
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Price</th>
+      <th class="text-center">Available</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+      <td class="text-right">{{product.price | currency:'INR'}}</td>
+      <td class="text-center">{{product.isAvailable ? 'Yes' : 'No'}}</td>
+      <td class="text-center">
+        <div class="btn-group btn-group-sm">
+          <a [routerLink]="['/products', product.id]" class="btn btn-info">
+            <span class="glyphicon glyphicon-info-sign"></span>
+          </a>
+          <a [routerLink]="['/products', product.id, 'edit']" class="btn btn-primary">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+          <a class="btn btn-warning" (click)="onDelete(product.id)">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

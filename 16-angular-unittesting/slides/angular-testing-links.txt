@@ -1,0 +1,16 @@
+Angular Unit Testing YouTube / Blog Links
+-----------------------------------------
+1. Techniques and practices for testing Angular - Duncan Hunter & Adam Stephensen
+https://youtu.be/lTKhB6uAmno
+
+2. Unit Testing with Angular
+https://youtu.be/Yod3tBt0beM
+
+3. Angular 5.x - Unit Testing and HttpClient
+https://youtu.be/4JVnSkR04tM
+
+4. TESTING SERVICES WITH HTTP IN ANGULAR 
+https://blog.thoughtram.io/angular/2016/11/28/testing-services-with-http-in-angular-2.html
+
+5. Unit testing of simple input box
+https://medium.com/@juliapassynkova/unit-testing-of-simple-input-box-fdbba93f3d2e

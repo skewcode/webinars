@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
+* Unit Testing in Angular Applications 
+  * _[video](https://youtu.be/o7N5JyhvKIY) | [code](./16-angular-unittesting/code) | [slides](./16-angular-unittesting/slides)_
+  * _webinar #16, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Feb 17, 2018_
 * Understanding Redux (state management for ReactJS apps) 
   * _[video](https://youtu.be/wGy1zNwj3Jg) | [code](./15-understanding-redux/code) | [slides](./15-understanding-redux/slides)_
   * _webinar #15, by [Sreekanth M.E.](https://www.linkedin.com/in/bangalorecorporatetrainer/) on Feb 10, 2018_
