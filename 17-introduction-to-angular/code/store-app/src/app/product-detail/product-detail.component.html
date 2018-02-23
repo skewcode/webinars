@@ -1,0 +1,39 @@
+<h3>Product Details</h3>
+<hr>
+<a routerLink="/products" class="btn btn-primary">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<br>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 id="name" class="panel-title">
+      {{ product.name | uppercase }}
+    </h3>
+  </div>
+  <div class="panel-body">
+    <p id="description" [ngStyle]="{ color: product.isAvailable ? 'blue' : 'red' }">
+      <!-- <p [style.color]="product.isAvailable ? 'blue' : 'red'"> -->
+      {{ product.description }}
+    </p>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <!-- <span class="label" [ngClass]="{ 'label-primary': product.isAvailable, 'label-warning': !product.isAvailable }"> -->
+      <span id="availability" class="label" [class.label-primary]="product.isAvailable" [class.label-warning]="!product.isAvailable">
+        {{ product.isAvailable ? "Available" : "Not Available" }}
+      </span>
+    </li>
+    <li id="price" class="list-group-item">
+      {{ product.price | currency:'INR' }}
+    </li>
+  </ul>
+  <div class="panel-footer">
+    <button id="edit" class="btn btn-primary btn-sm" (click)='onEdit()'>
+      <span class="glyphicon glyphicon-edit"></span>
+    </button>
+    <button id="delete" class="btn btn-warning btn-sm" (click)="onDelete()">
+      <span class="glyphicon glyphicon-trash"></span>
+    </button>
+  </div>
+</div>
