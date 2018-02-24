@@ -1,10 +1,13 @@
 <h3>Products</h3>
-<div>
-</div>
+<p appHighlight="LAVENDER">(List of products)</p>
 <a routerLink="/products/new" class="btn btn-primary">
   <span class="glyphicon glyphicon-plus"></span>
 </a>
 <br>
+<br>
+<div>
+  <input class="form-control" placeholder="Search for..." [(ngModel)]="searchText" />
+</div>
 <br>
 <div>
   <table class="table table-bordered">
@@ -14,7 +17,7 @@
       <th class="text-center">Available</th>
       <th></th>
     </tr>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | searchProducts : searchText : 'name'">
       <td>{{product.name}}</td>
       <td class="text-right">{{product.price | currency:'INR'}}</td>
       <td class="text-center">{{product.isAvailable ? 'Yes' : 'No'}}</td>

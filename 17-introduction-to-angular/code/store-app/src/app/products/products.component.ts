@@ -12,6 +12,7 @@ import { AppError } from '../common/app-error';
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
   error: AppError;
+  searchText = '';
 
   constructor(private service: ProductsService) {}
 

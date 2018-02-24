@@ -17,6 +17,9 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductsService } from './services/products.service';
 import { AboutComponent } from './about/about.component';
 
+import { SearchProducts } from './pipes/search-products.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
+
 const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'products/new', component: ProductFormComponent },
@@ -39,7 +42,10 @@ const appRoutes: Routes = [
     ProductsComponent,
     ProductFormComponent,
     ProductDetailComponent,
-    AboutComponent
+    AboutComponent,
+
+    HighlightDirective,
+    SearchProducts
   ],
   imports: [
     BrowserModule,
