@@ -8,7 +8,7 @@
         var x = '2';
         return x;
     }
-    alert( typeof foo() );
+    alert( typeof foo() ); // "number" | "string" | "function" (answer is "string")
     ```
 
 
@@ -22,7 +22,7 @@
         
         var x = '2';
     }
-    console.log( typeof foo() );
+    console.log( typeof foo() ); // "number" | "string" | "function" | "undefined" (answer is "function")
     ```
     __Source__: https://gist.github.com/MattSurabian/8867307
 
