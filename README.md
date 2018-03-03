@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
+* JavaScript - Tricky Interview Questions 
+  * _[video](https://youtu.be/7_pzUSKI42E) | [code](./18-javascript-tricky-questions/code) | This webinar does not have slides_
+  * _webinar #18, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 13, 2018_
 * Introduction to Angular 
   * _[video](https://youtu.be/ahHiaIe3pZQ) | [code](./17-introduction-to-angular/code) | [slides](./17-introduction-to-angular/slides)_
   * _webinar #17, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Feb 17, 2018_
