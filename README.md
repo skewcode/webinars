@@ -3,7 +3,7 @@ Source code, slides and other materials from webinars conducted by [SkewCode](ht
 
 ___
 * JavaScript - More Tricky Interview Questions 
-  * _[video](https://youtu.be/44uhxQJJBMg) | [code](./19-javascript-more-tricky-questions/code) | [slides](./18-javascript-more-tricky-questions/slides)_
+  * _[video](https://youtu.be/44uhxQJJBMg) | [code](./19-javascript-more-tricky-questions/code) | [slides](./19-javascript-more-tricky-questions/slides)_
   * _webinar #19, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Jan 13, 2018_
 * JavaScript - Tricky Interview Questions 
   * _[video](https://youtu.be/7_pzUSKI42E) | [code](./18-javascript-tricky-questions/code) | [slides](./18-javascript-tricky-questions/slides)_
