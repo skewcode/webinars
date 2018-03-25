@@ -2,7 +2,7 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
-* JavaScript - More Tricky Interview Questions 
+* Asynchronous JavaScript - Callbacks and promises 
   * _[video](https://youtu.be/rrJQMojRc48) | [code](./21-async-js-callbacks-promises/code) | This webinar does not have slides_
   * _webinar #21, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Mar 24, 2018_
 * Building REST APIs using Node.JS and Express 
