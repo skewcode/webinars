@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="./04-ajax.js"></script>
+        <script>
+            function getCommentersEmailIds( username, cb ) {
+                // get details of user with given username (the API returns an array of users, but we are interested only in the first match)
+                return get( 'https://jsonplaceholder.typicode.com/users?username=' + username )
+                    .then(function( users ) {
+                        var userId = users[0].id;
+
+                        // get posts by Bret - we are interested in only the first one again
+                        return get( 'https://jsonplaceholder.typicode.com/users/' + userId + '/posts' );
+                    })
+                    .then(function( posts ) {
+                        var postId = posts[0].id;
+                        
+                        // get comments for the first post
+                        return get( 'https://jsonplaceholder.typicode.com/posts/' + postId + '/comments' )
+                    })
+                    .then(function( comments ) {
+                        return comments.map(function( commenter ) {
+                            return commenter.email;
+                        });
+                    });
+            }
+
+            // get email ids of people who commented on Bret's first blog post
+            getCommentersEmailIds( 'Bret' )
+                .then(function( result ) {
+                    console.log( 'result = ', result )
+                })
+                .catch(function( err ) {
+                    console.log( err );
+                });
+        </script>
+    </body>
+</html>

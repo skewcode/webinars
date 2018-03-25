@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="./01-ajax.js"></script>
+        <script>
+            async function getCommentersEmailIds( username, cb ) {
+                var users = await get( 'https://jsonplaceholder.typicode.com/users?username=' + username );
+                var userId = users[0].id;
+                var posts = await get( 'https://jsonplaceholder.typicode.com/users/' + userId + '/posts' );
+                var postId = posts[0].id;
+                var comments = await get( 'https://jsonplaceholder.typicode.com/posts/' + postId + '/comments' );
+                return comments.map(function( commenter ) {
+                    return commenter.email;
+                });
+            }
+
+            // get email ids of people who commented on Bret's first blog post
+            getCommentersEmailIds( 'Bret' )
+                .then(function( result ) {
+                    console.log( 'result = ', result )
+                })
+                .catch(function( err ) {
+                    console.log( err );
+                });
+        </script>
+    </body>
+</html>

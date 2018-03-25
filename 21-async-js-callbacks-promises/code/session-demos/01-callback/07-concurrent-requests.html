@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Concurrent calls</title>
+    </head>
+    <body>
+        
+        <script src="lib/ajax.js"></script>
+        <script>
+            /**
+             * We have a user id and we want to have the list of email ids of all commenters for any of the blog post by that user.
+             * Steps:
+             * 1. https://jsonplaceholder.typicode.com/users/${userId}/posts => posts
+             * 2. We need to iterate through all the posts and within the iteration (index variable is i), hit the url https://jsonplaceholder.typicode.com/posts/${posts[i].id}/comments => comments => concatenate to a shared array
+             */
+            function getAllCommentersForUser( userId, cb ) {
+                get( 'https://jsonplaceholder.typicode.com/users/' + userId + '/posts', function( err, posts ) {
+                    var allComments = [];
+                    var doneCounter = 0;
+                    for( var i = 0; i < posts.length; i++ ) {
+                        get( 'https://jsonplaceholder.typicode.com/posts/' + posts[i].id + '/comments', function( err, comments ) {
+                            allComments = allComments.concat( comments );
+                            doneCounter++;
+
+                            if( doneCounter === posts.length ) { // this is where the problem begins - how do we gets to know all ajax calls have reached resolution (pass/fail) - we simplify and assume all calls are successful
+                                cb( allComments );
+                            }
+                        });
+                    }
+                });
+            }
+
+            getAllCommentersForUser( 1, function( allComments ) {
+                console.log( 'comments for all blog posts made by user with id 1 are ', allComments );
+            });
+        </script>
+    </body>
+</html>

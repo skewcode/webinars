@@ -2,6 +2,9 @@
 Source code, slides and other materials from webinars conducted by [SkewCode](https://www.skewcode.com).
 
 ___
+* JavaScript - More Tricky Interview Questions 
+  * _[video](https://youtu.be/rrJQMojRc48) | [code](./21-async-js-callbacks-promises/code) | This webinar does not have slides_
+  * _webinar #21, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Mar 24, 2018_
 * Building REST APIs using Node.JS and Express 
   * _[video](https://youtu.be/VetHAyB83jI) | [code](./20-rest-apis-node-express/code) | [slides](./20-rest-apis-node-express/slides)_
   * _webinar #20, by [Sreekanth M.E.](https://www.linkedin.com/in/bangalorecorporatetrainer/) on Mar 17, 2018_

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Serial calls</title>
+    </head>
+    <body>
+        
+        <script src="lib/ajax.js"></script>
+        <script>
+            /**
+             * We have a username and we want to have the list of email ids of all commenters for the first blog post by that user.
+             * Steps:
+             * 1. https://jsonplaceholder.typicode.com/users?username=Bret => user => user.id
+             * 2. https://jsonplaceholder.typicode.com/users/${user.id}/posts => posts by given user => posts[0].id
+             * 3. https://jsonplaceholder.typicode.com/posts/${posts[0].id}/comments => comments for the first post
+             */
+            function getCommentersEmailIds( username, cb ) {
+                // callback hell / christmas tree problem - occurs execution of asynchronous tasks
+                get( 'https://jsonplaceholder.typicode.com/users?username=' + username, function( err, users ) {
+                    get( 'https://jsonplaceholder.typicode.com/users/' + users[0].id + '/posts', function( err, posts ) {
+                        get( 'https://jsonplaceholder.typicode.com/posts/' + posts[0].id + '/comments', function( err, comments ) {
+                            var commentersEmailIds = comments.map(function( comment ) {
+                                return comment.email;
+                            });
+                            cb( commentersEmailIds );
+                        });
+                    });
+                });
+            }
+
+            getCommentersEmailIds( 'Bret', function( commentersEmailIds ) {
+                console.log( 'commenters email ids are ', commentersEmailIds );
+            });
+        </script>
+    </body>
+</html>
