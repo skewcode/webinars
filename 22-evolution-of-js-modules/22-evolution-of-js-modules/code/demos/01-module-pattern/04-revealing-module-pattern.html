@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The Revealing Module Pattern</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * The Revealing Module Pattern
+             *
+             * This is a slight modification to the standard Module Pattern. Here all methods are "private" by default. Only the ones that are to be part of the public interface are set as methods in the returned object.
+             * 
+             * Advantages:
+             * Makes syntax more consistent and improves readability by declaring all methods in one place.
+             * 
+             * Disadvantages:
+             * Public properties and function can't be overridden if a patch is necessary, as private function will continue to refer to the private implementation.
+             */
+            var shoppingCartFactory = function( cartName ) {
+                // "private" variable - accessible only to the inner functions (via their closure).
+                // The cartName and items[] are thus private.
+                var items = [];
+
+                function addItem( item ) {
+                    items[items.length] = item;
+                }
+
+                function removeItem( item ) {
+                    var index = items.indexOf( item );
+                    if( index !== -1 ) {
+                        items.splice( index, 1 );
+                    }
+                }
+
+                function display() {
+                    console.log( 'Items in shopping cart (' + cartName + ') are ', items );
+                }
+           
+                // the returned object becomes the 'public' interface
+                return {
+                    addItem: addItem,
+                    removeItem: removeItem,
+                    display: display
+                };
+            };
+           
+            var groceryCart = shoppingCartFactory( 'Grocery' );
+            var gadgetsCart = shoppingCartFactory( 'Gadgets' );
+            
+            groceryCart.addItem( 'Soap' );
+            groceryCart.addItem( 'Cornflakes' );
+            groceryCart.display();
+            
+            gadgetsCart.addItem( 'Samsung Galaxy S9' );
+            gadgetsCart.display();
+            
+            groceryCart.removeItem( 'Soap' );
+            groceryCart.display();
+        </script>
+    </body>
+</html>

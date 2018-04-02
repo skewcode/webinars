@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Introduction to the Module Pattern</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * The JS Module Pattern
+             *
+             * The Module Pattern uses a closure to hide and reveal data selectively and also the methods to access and modify them.
+             * This makes up for the lack of private variables and methods in JS objects
+             */
+            var shoppingCartFactory = function( cartName ) {
+                // "private" variables - accessible only to the inner functions (via their closure).
+                // The cartName, items[], and unavailableItems[] are thus private.
+                var items = [];
+
+                var unavailableItems = [ 'Soap', 'Shampoo' ];
+
+                // "private" method
+                function isAvailable( item ) {
+                    return unavailableItems.indexOf( item ) === -1;
+                }
+            
+                // the returned object becomes the "public" interface
+                return {
+                    addItem: function (item) {
+                        if( isAvailable( item ) ) {
+                            items[items.length] = item;
+                        }
+                    },
+                    removeItem: function (item) {
+                        var index = items.indexOf( item );
+                        if( index !== -1 ) {
+                            items.splice( index, 1 );
+                        }
+                    },
+                    display: function () {
+                        console.log( 'Items in shopping cart (' + cartName + ') are ', items );
+                    }
+                };
+            };
+           
+            var groceryCart = shoppingCartFactory( 'Grocery' );
+            var gadgetsCart = shoppingCartFactory( 'Gadgets' );
+            
+            groceryCart.addItem( 'Soap' );
+            groceryCart.addItem( 'Biscuits' );
+            groceryCart.addItem( 'Cornflakes' );
+            groceryCart.display();
+            
+            gadgetsCart.addItem( 'Samsung Galaxy S9' );
+            gadgetsCart.display();
+            
+            groceryCart.removeItem( 'Biscuits' );
+            groceryCart.display();
+        </script>
+    </body>
+</html>

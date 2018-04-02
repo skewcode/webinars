@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Modular code without data hiding</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * Multiple shopping carts can be created.
+             * However, cartName and items can still be modified outside of the class methods
+             */
+            function ShoppingCart( cartName ) {
+                this.cartName = cartName;
+                this.items = [];
+                this.unavailableItems = [ 'Soap', 'Shampoo' ];
+                
+                this.isAvailable = function( item ) {
+                    return this.unavailableItems.indexOf( item ) === -1;
+                }
+
+                this.addItem = function( item ) {
+                    if( this.isAvailable( item ) ) {
+                        this.items[this.items.length] = item;
+                    }
+                };
+                
+                this.removeItem = function( item ) {
+                    var index = this.items.indexOf( item );
+                    if( index !== -1 ) {
+                        this.items.splice( index, 1 );
+                    }
+                };
+            
+                this.display = function() {
+                    console.log( 'Items in shopping cart (' + this.cartName + ') are ', this.items );
+                };
+            }
+            
+            var groceryCart = new ShoppingCart( 'Grocery' );
+            var gadgetsCart = new ShoppingCart( 'Gadgets' );
+            
+            groceryCart.addItem( 'Soap' );
+            groceryCart.addItem( 'Cornflakes' );
+            groceryCart.display();
+            
+            gadgetsCart.addItem( 'Samsung Galaxy S9' );
+            gadgetsCart.display();
+            
+            groceryCart.removeItem( 'Soap' );
+            groceryCart.display();
+        </script>
+    </body>
+</html>

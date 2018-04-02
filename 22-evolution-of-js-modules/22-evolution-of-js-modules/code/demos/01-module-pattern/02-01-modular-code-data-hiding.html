@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Modular code with data hiding</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * Multiple shopping carts can be created.
+             * cartName, items and unavailableItems cannot be modified outside of the class methods
+             */
+             function ShoppingCart( cartName ) {
+                // "private" variables, methods etc.
+                var items = [];
+                var unavailableItems = [ 'Soap', 'Shampoo' ];
+                
+                function isAvailable( item ) {
+                    return unavailableItems.indexOf( item ) === -1;
+                }
+
+                // "public" variables, methods etc.
+                this.addItem = function( item ) {
+                    if( isAvailable( item ) ) {
+                        items[items.length] = item;
+                    }
+                };
+                
+                this.removeItem = function( item ) {
+                    var index = items.indexOf( item );
+                    if( index !== -1 ) {
+                        items.splice( index, 1 );
+                    }
+                };
+            
+                this.display = function() {
+                    console.log( 'Items in shopping cart (' + cartName + ') are ', items );
+                };
+            }
+            
+            var groceryCart = new ShoppingCart( 'Grocery' );
+            var gadgetsCart = new ShoppingCart( 'Gadgets' );
+            
+            groceryCart.addItem( 'Soap' );
+            groceryCart.addItem( 'Cornflakes' );
+            groceryCart.display();
+            
+            gadgetsCart.addItem( 'Samsung Galaxy S9' );
+            gadgetsCart.display();
+            
+            groceryCart.removeItem( 'Soap' );
+            groceryCart.display();
+        </script>
+    </body>
+</html>

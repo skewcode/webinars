@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Modular code with data hiding</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * Since the "public" methods rely on private variables and methods in the closure, we cannot set them up on the constructor's prototype (the "private" methods and variables will no longer be in scope then)
+             */
+             function ShoppingCart( cartName ) {
+                // "private" variables, methods etc.
+                var items = [];
+                var unavailableItems = [ 'Soap', 'Shampoo' ];
+                
+                function isAvailable( item ) {
+                    return unavailableItems.indexOf( item ) === -1;
+                }
+            }
+
+            // these methods when called will error out - the "private" variables and methods are unavailable on their scope chain
+            ShoppingCart.prototype.addItem = function( item ) {
+                if( isAvailable( item ) ) {
+                    items[items.length] = item;
+                }
+            };
+            
+            ShoppingCart.prototype.removeItem = function( item ) {
+                var index = items.indexOf( item );
+                if( index !== -1 ) {
+                    items.splice( index, 1 );
+                }
+            };
+        
+            ShoppingCart.prototype.display = function() {
+                console.log( 'Items in shopping cart (' + cartName + ') are ', items );
+            };
+            
+            var groceryCart = new ShoppingCart( 'Grocery' );
+            var gadgetsCart = new ShoppingCart( 'Gadgets' );
+            
+            groceryCart.addItem( 'Soap' );
+            groceryCart.addItem( 'Cornflakes' );
+            groceryCart.display();
+            
+            gadgetsCart.addItem( 'Samsung Galaxy S9' );
+            gadgetsCart.display();
+            
+            groceryCart.removeItem( 'Soap' );
+            groceryCart.display();
+        </script>
+    </body>
+</html>

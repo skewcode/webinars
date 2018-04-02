@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Introduction to closures</title>
+    </head>
+    <body>
+        <script>
+            /**
+            * Closure
+            * Every JS function creates a new scope, and aprt from its own variables, it "closes in on" the variables in the enclosing scope. JS allows functions to be defined within other functions. If an inner function is returned (or part of a returned value), its environment is kept alive, i.e. the all variables it can access, INCLUDING THOSE IN THE ENCLOSING FUNCTION, are kept alive - the outer functions' variables etc. will not be garbage collected and still be accessible to the inner function.
+            */
+
+            /**
+            * Generates functions that calculate a number to a given power
+            *
+            * @param {number} power Power to which number is to be raised by the generated function.
+            * @returns {function} A function that when passed a number, returns the number raised to the the given power
+            */
+            function powerFactory(power) {
+                // power is a variable local to the enclosing function (powerFactory)
+                
+                // power will be accessible to this inner function and shall be kept alive after this inner function is returned via a call to powerFactory
+                return function (number) {
+                    return Math.pow(number, power);
+                };
+            }
+
+            var fourAndAHalfPower = powerFactory(4.5);
+
+            // In a way, we can say fourAndAHalfPower 'remembers' the value of power variable at the time fourAndAHalfPower was created - Closures thus lend 'memory' to a function
+            console.log(fourAndAHalfPower(2));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Non-modular code</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * Only one cart can exist using this approach.
+             * Apart from addItem(), removeItem(), any other piece of code can modify items and cartName as well
+             */
+            var items = [];
+            var unavailableItems = [ 'Soap', 'Shampoo' ];
+            var cartName;
+           
+            function isAvailable( item ) {
+                return unavailableItems.indexOf( item ) === -1;
+            }
+
+            function addItem( item ) {
+                if( isAvailable( item ) ) {
+                    items[items.length] = item;
+                }
+            }
+
+            function removeItem( item ) {
+                var index = items.indexOf( item );
+                if( index !== -1 ) {
+                    items.splice( index, 1 );
+                }
+            }
+            
+            function display() {
+                console.log( 'Items in shopping cart (' + cartName + ') are ', items );
+            }
+           
+            cartName = 'Grocery';
+            
+            addItem('Soap');
+            addItem('Cornflakes');
+            display();           
+           
+            removeItem('Soap');
+            display();
+        </script>
+    </body>
+</html>

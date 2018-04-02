@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Out-of-order inclusion of dependencies</title>
+    </head>
+    <body>
+        <!--
+            Scripts need to be included in order. For example, Bootstrap requires jQuery and hence the jQuery script has to be included before Bootstrap.
+            Here we have bar.js depending on foo.js. Hence foo.js must be included before bar.js.
+            In a large project maintaining correct order of a huge number of dependencies is very difficult and prone to errors.
+        -->
+
+        <!-- If bar were included before then it would result in an error -->
+        <script src="js/foo1.js"></script>
+        <script src="js/foo2.js"></script>
+        <script src="js/bar.js"></script>
+    </body>
+</html>
