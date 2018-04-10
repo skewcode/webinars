@@ -1,0 +1,15 @@
+Introduction to MongoDB - Deleting documents
+--------------------------------------------
+
+* deleteMany()
+
+// Delete all documents from the inventory collection
+db.inventory.deleteMany({})
+
+// Remove all documents from the inventory collection where the status field equals "A“
+db.inventory.deleteMany({ status : "A" })
+
+* deleteOne()
+
+// Delete the first document where status is "D"
+db.inventory.deleteOne( { status: "D" } )

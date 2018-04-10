@@ -1,0 +1,87 @@
+Introduction to MongoDB - Reading documents
+-------------------------------------------
+
+* find()
+
+// read all documents
+db.movies.find();
+db.movies.find().pretty();
+
+// equality search - scalar fields
+db.movies.find({ title: "Jaws" }).pretty();
+db.movies.find({ year: 1981 }).pretty();
+db.movies.find({ rated: "PG-13" }).pretty();
+
+// get count of documents
+db.movies.find({ rated: "PG-13" }).count();
+
+// show movies having both rated field as 'PG-13' and year as 2009
+db.movies.find({ rated: "PG-13", year: 2009 }).pretty();
+
+// equality search - embedded documents
+db.movies.find({ "tomato.meter": 100 }).pretty();
+
+// array fields - exact array, in the same order
+db.movies.find({ writers: ["Joel Coen", "Ethan Coen"] }).pretty();
+
+// array fields - return if the value is present anywhere in the array 
+db.movies.find({ actors: "Will Smith" }).pretty();
+
+// array fields - return if the value is present in the second element of the array
+db.movies.find({ "actors.2": "Will Smith" }).pretty();
+
+* Cursors
+Return value of find() is not an array, it is instead a cursor object
+let c = db.movies.find();
+c.hasNext();
+c.next();
+c.objsLeftInBatch(); - gives the count of documents that are remaining
+
+The cursor is automatically iterated upto 20 times
+
+* Projection
+db.movies.find({ rating: "PG" }, { title: 1 }).pretty();
+db.movies.find({ rating: "PG" }, { title: 1, _id: 0 }).pretty();
+db.movies.find({ rating: "PG" }, { writers: 0, actors: 0, _id: 0 }).pretty();
+
+* Comparison operators
+// Documentation URL: https://docs.mongodb.com/manual/reference/operator/query-comparison/
+
+db.movies.find({ runtime: { $gt: 90 } }, { title: 1, runtime: 1, _id: 0 }).pretty();
+db.movies.find({ runtime: { $gte: 90, $lte: 120 } }, { title: 1, runtime: 1, _id: 0 }).pretty();
+db.movies.find({ runtime: { $gt: 120 }, "tomato.meter": { $gte: 95 } }, { title: 1, runtime: 1, tomato: 1, _id: 0 }).pretty();
+
+db.movies.find({ rated: { $ne: 'UNRATED'} }, { title: 1, rated: 1, _id: 0 }).pretty();
+
+db.movies.find({ rated: { $in: ['G', 'PG', 'PG-13'] } }, { title: 1, rated: 1, _id: 0 }).pretty();
+
+* Element operators
+// Documentation URL: https://docs.mongodb.com/manual/reference/operator/query-element/
+
+// check the presence or absence of a particular field
+// check the data type of a field value
+
+db.movies.find({ "tomato.meter": { $exists: true } }, { title: 1, tomato: 1, _id: 0 }).pretty();
+db.movies.find({ _id: { $type: "string" } }, { title: 1 }).pretty();
+
+* Logical operators
+// Documentation URL: https://docs.mongodb.com/manual/reference/operator/query-logical/
+
+db.movies.find({ $or: [ { "tomato.meter": { $gt: 95 } }, { metacritic: { $gt: 80 } } ] }, { _id: 0, title: 1, tomato: 1, metacritic: 1 } ).pretty();
+
+db.movies.find({ $and: [ { "tomato.meter": { $gt: 95 } }, { metacritic: { $gt: 80 } } ] }, { _id: 0, title: 1, tomato: 1, metacritic: 1 } ).pretty();
+
+db.movies.find({ $and : [ { "metacritic": { $ne: 100 } },
+                                { "metacritic": { $exists: true } } ] }).pretty();
+
+* regex operator
+// Documentation URL: https://docs.mongodb.com/manual/reference/operator/query/regex/
+
+db.movies.find({ "awards.text": { $regex: /^Won\s.*/ } }).pretty();
+
+* Array operators
+// Documentation URL: https://docs.mongodb.com/manual/reference/operator/query-array/
+
+db.movies.find({ genres: { $all: ['Comedy', 'Crime', 'Drama'] } }).pretty();
+db.movies.find({ countries: { $size: 1 } }).pretty();
+db.movies.find({ boxOffice: { $elemMatch: { country: "UK", revenue: { $gt: 15 } } })

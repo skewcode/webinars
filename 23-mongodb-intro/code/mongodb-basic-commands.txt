@@ -1,0 +1,28 @@
+Introduction to MongoDB - Basic Commands
+----------------------------------------
+
+Launch MongoDB Server
+* Open Windows Command Prompt or Terminal in macOS
+* Start the MongoDB server using 'mongod' command
+C:\> mongod
+
+Launch Mongo Shell
+* Open another instance of Windows Command Prompt or Terminal in macOS
+* Start the Mongo shell using 'mongo' command
+C:\> mongo
+
+----------------------------------------------------------------------------
+Mongo Shell Basic Commands
+> help - see the list of commands
+
+> show dbs - shows list of databases
+
+> show collections - shows list of collections within a database
+
+> db
+  - global variable
+  - holds a reference to the currently used database
+  
+> use <database> 
+  - <database> can be existing or non-existing
+  - If non-existing, MongoDB creates a database in a lazy fashion when the first document is inserted in the first collection of the database

@@ -3,6 +3,9 @@ Source code, slides and other materials from webinars conducted by [SkewCode](ht
 
 ___
 
+* Introduction to MongoDB 
+  * _[video](https://youtu.be/vfbEwD2lAxQ) | [code](./23-mongodb-intro/code) | [slides](./23-mongodb-intro/slides)_
+  * _webinar #17, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Apr 10, 2018_
 * Evolution of JavaScript Modules
   * _[video](https://youtu.be/pFTWiUMaJQU) | [code](./22-evolution-of-js-modules/code) | This webinar does not have slides_
   * _webinar #22, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Mar 31, 2018_

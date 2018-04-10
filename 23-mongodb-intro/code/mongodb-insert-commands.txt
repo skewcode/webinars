@@ -1,0 +1,92 @@
+Introduction to MongoDB - Inserting documents
+---------------------------------------------
+
+* insertOne()
+use video;
+db.movies.insertOne({ "title": "Jaws", "year": 1975, "imdb": "tt0073195" });
+db.movies.insertOne({ "title": "Mad Max 2: The Road Warrior", "year": 1981, "imdb": "tt0082694" });
+db.movies.insertOne({ "title": "Raiders of the Lost Ark", "year": 1981, "imdb": "tt0082971" });
+db.movies.insertOne({ "title": "Rocky", "year": 1976, "imdb": "tt0075148"});
+
+// You can provide your own unique value for _id
+db.movies.insertOne({ "_id": "tt0075148", "title": "Rocky", "year": 1976 });
+
+* insertMany() - ordered
+db.movies.insertMany(
+  [
+    {
+      "_id" : "tt0084726",
+      "title" : "Star Trek II: The Wrath of Khan",
+      "year" : 1982,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt0796366",
+      "title" : "Star Trek",
+      "year" : 2009,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt1408101",
+      "title" : "Star Trek Into Darkness",
+      "year" : 2013,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt0117731",
+      "title" : "Star Trek: First Contact",
+      "year" : 1996,
+      "type" : "movie"
+    }
+  ]
+);
+
+* insertMany() - un-ordered
+db.movies.insertMany(
+  [
+    {
+      "_id" : "tt0084726",
+      "title" : "Star Trek II: The Wrath of Khan",
+      "year" : 1982,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt0796366",
+      "title" : "Star Trek",
+      "year" : 2009,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt0084726",
+      "title" : "Star Trek II: The Wrath of Khan",
+      "year" : 1982,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt1408101",
+      "title" : "Star Trek Into Darkness",
+      "year" : 2013,
+      "type" : "movie"
+    },
+    {
+      "_id" : "tt0117731",
+      "title" : "Star Trek: First Contact",
+      "year" : 1996,
+      "type" : "movie"
+    }
+  ],
+  {
+    "ordered": false 
+  }
+);
+
+NOTE
+* By default, all collections have a unique primary index on the _id field
+
+Object id is a combination of: 
+  <timestamp>|<machine-id>|<process-id>|<counter>
+  
+  <timestamp> - 4 bytes
+  <machine-id> - 3 bytes
+  <process-id> - 2 bytes
+  <counter> - 3 bytes

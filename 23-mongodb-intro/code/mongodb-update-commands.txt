@@ -1,0 +1,80 @@
+Introduction to MongoDB - Updating documents
+--------------------------------------------
+
+* updateOne()
+
+// updating one field of one document
+db.movies.updateOne({
+  title: "The Martian"}, 
+  {
+    $set: {
+      poster: "http://ia.media-imdb.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_SX300.jpg"
+  }
+});
+
+// updating nested document of a document
+db.movies.updateOne({
+  title: "The Martian“
+}, {
+  $set: {
+    "awards": {
+      "wins": 8,
+      "nominations": 14,
+      "text": "Nominated for 3 Golden Globes. Another 8 wins & 14 nominations.“
+    }
+  }
+});
+
+// update using $inc operator
+db.movies.updateOne({
+  title: "The Martian"}, {
+  $inc: {
+    "reviews": 3
+  }
+});
+
+// push a review into reviews array within the movie document
+db.movies.updateOne({
+  title: "The Martian“
+}, {
+  $push: {
+    reviews: {
+      rating: 4.5,
+      date: ISODate("2016-01-12T09:00:00Z"),
+      reviewer: "Spencer H.",
+      text: "Good movie to watch with the family!"
+    }
+  }
+})
+
+// remove rated field from all the documents where rated field contains a null value
+db.movies.updateMany({ rated: null }, { $unset: { rated: "" } });
+
+// upserts - if no document is found matching the filter, insert a new document
+db.movies.updateOne({
+  "imdb.id": "tt3659388"
+}, {
+  $set: {
+    "title": "The Martian", "year": 2015, "rated": "PG-13",
+    "released": ISODate("2015-10-02T04:00:00Z"), 
+    "runtime": 144, "countries": [ "USA", "UK" ],
+    "genres": [ "Adventure", "Drama", "Sci-Fi" ],
+    "director": "Ridley Scott",
+    "writers": [ "Drew Goddard", "Andy Weir" ],
+    "actors": [ "Matt Damon", "Jessica Chastain", 
+       "Kristen Wiig", "Jeff Daniels" ]
+  }
+}, {
+  upsert: true
+});
+
+// replaceOne() - replace the whole document
+db.inventory.replaceOne({ item: "paper" }, 
+   { 
+      item: "paper", 
+      instock: [ 
+         { warehouse: "A", qty: 60 }, 
+         { warehouse: "B", qty: 40 } 
+      ]
+   }
+);
