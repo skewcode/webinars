@@ -3,9 +3,12 @@ Source code, slides and other materials from webinars conducted by [SkewCode](ht
 
 ___
 
+* Functional Programming in JavaScript
+  * _[video](https://youtu.be/BRC-r6l1zYE) | [code](./24-functional-programming-in-js/code) | [slides](./24-functional-programming-in-js/slides)_
+  * _webinar #24, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on May 3, 2018_
 * Introduction to MongoDB 
   * _[video](https://youtu.be/vfbEwD2lAxQ) | [code](./23-mongodb-intro/code) | [slides](./23-mongodb-intro/slides)_
-  * _webinar #17, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Apr 10, 2018_
+  * _webinar #23, by [Naveen Pete](https://www.linkedin.com/in/naveen-pete/) on Apr 10, 2018_
 * Evolution of JavaScript Modules
   * _[video](https://youtu.be/pFTWiUMaJQU) | [code](./22-evolution-of-js-modules/code) | This webinar does not have slides_
   * _webinar #22, by [Prashanth Puranik](https://www.linkedin.com/in/prashanth-puranik/) on Mar 31, 2018_
